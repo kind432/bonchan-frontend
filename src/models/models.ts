@@ -17,8 +17,9 @@ export interface ISubcategory {
 }
 
 export interface IForum {
-    id: number
+    id?: number
     name: string
+    subcategory: ISubcategory
 }
 
 export interface ServerResponse<T> {

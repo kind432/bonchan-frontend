@@ -43,7 +43,7 @@ export function CategoryItem({category}: Props) {
                             <div className="text-xl text-emerald-500 font-bold tracking-wide text-gray-500">{category.name}</div>
                         </div>
                     </div>
-                    <div className="flex flex-wrap gap-x-1">
+                    <div className="flex flex-wrap py-1 gap-x-1">
                         <button onClick={() => setShowCreate(true)}><AiOutlinePlusSquare className="bg-orange-600 h-6 w-6 rounded"/></button>
                         <button onClick={() => setShowDelete(true)}><AiOutlineDelete className="bg-orange-600 h-6 w-6 rounded"/></button>
                         <button onClick={() => setShowUpdate(true)}><AiOutlineEdit className="bg-orange-600 h-6 w-6 rounded"/></button>
