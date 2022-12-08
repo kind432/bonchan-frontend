@@ -16,7 +16,7 @@ export function UpdateCategory({onUpdate, category}: Props) {
     const submitHandler = (event: React.FormEvent) => {
 
         if(value.trim().length === 0) {
-            setError("Введите правильное имя категории")
+            setError("Введите правильное название категории")
             return
         }
 
@@ -49,7 +49,7 @@ export function UpdateCategory({onUpdate, category}: Props) {
             <input
                 type="text"
                 className="border py-2 px-4 mb-2 w-full outline-0"
-                placeholder="Введите имя категории..."
+                placeholder="Введите название категории..."
                 value={value}
                 onChange={changeHandler}
             />

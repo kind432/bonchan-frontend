@@ -5,6 +5,8 @@ import {HomePage} from "./pages/HomePage";
 import {TopicsPage} from "./pages/TopicsPage";
 import {Sidebar} from "./components/layout/Sidebar";
 import {AboutPage} from "./pages/AboutPage";
+import {LoginPage} from "./pages/LoginPage";
+import {CommentPage} from "./pages/CommentPage";
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
             <Sidebar/>
             <Routes>
                 <Route path="/" element={ <HomePage /> }/>
-                <Route path="/forum/:id" element={ <TopicsPage /> }/>
+                <Route path="/forum/:id" element={<TopicsPage /> }/>
                 <Route path="/about" element={ <AboutPage />}/>
+                <Route path="/login" element={ <LoginPage />}/>
+                <Route path="/topic/:id" element={ <CommentPage/>}/>
             </Routes>
           </div>
       </div>

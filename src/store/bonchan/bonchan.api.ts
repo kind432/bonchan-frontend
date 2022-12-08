@@ -1,5 +1,5 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import {ICategory, IForum, ISubcategory, ITopic} from "../../models/models";
+import {ICategory, IComment, IForum, ISubcategory, ITopic} from "../../models/models";
 
 export const bonchanApi = createApi({
     reducerPath: 'bonchan/api',
@@ -20,6 +20,32 @@ export const bonchanApi = createApi({
                 method: 'GET'
             })
         }),
+        createTopic: build.mutation<ITopic, ITopic>({
+            query: (topic: ITopic) => ({
+                url: 'topics/create',
+                body: topic,
+                method: 'POST',
+            })
+        }),
+        deleteTopic: build.mutation<void, number>({
+            query: (topicId: number) => ({
+                url: 'topics/delete/' + topicId,
+                method: 'DELETE',
+            })
+        }),
+        updateTopic: build.mutation<ITopic, ITopic>({
+            query: (topic: ITopic) => ({
+                url: 'topics/update',
+                body: topic,
+                method: 'PUT',
+            })
+        }),
+        topicById: build.query<ITopic, number>( {
+            query: (id: number) => ({
+                url: 'topics/getById/' + id,
+                method: 'GET'
+            })
+        }),
         categoriesAllList: build.query<ICategory[], void>({
             query: () => ({
                 url: 'categories/',
@@ -34,8 +60,8 @@ export const bonchanApi = createApi({
             })
         }),
         deleteCategory: build.mutation<void, number>({
-            query: (id: number) => ({
-                url: 'categories/delete/' + id,
+            query: (categoryId: number) => ({
+                url: 'categories/delete/' + categoryId,
                 method: 'DELETE',
             })
         }),
@@ -78,6 +104,12 @@ export const bonchanApi = createApi({
                 method: 'GET'
             })
         }),
+        forumById: build.query<IForum, number>({
+            query: (forumId: number) => ({
+                url: 'forums/getForum/' + forumId,
+                method: 'GET'
+            })
+        }),
         createForum: build.mutation<IForum, IForum>({
             query: (forum: IForum) => ({
                 url: 'forums/create',
@@ -98,11 +130,42 @@ export const bonchanApi = createApi({
                 method: 'PUT',
             })
         }),
+        createComment: build.mutation<IComment, IComment>({
+            query: (comment: IComment) => ({
+                url: 'comments/create',
+                body: comment,
+                method: 'POST',
+            })
+        }),
+        deleteComment: build.mutation<void, number>({
+            query: (commentId: number) => ({
+                url: 'comments/delete/' + commentId,
+                method: 'DELETE',
+            })
+        }),
+        updateComment: build.mutation<IComment, IComment>({
+            query: (comment: IComment) => ({
+                url: 'comments/update',
+                body: comment,
+                method: 'POST',
+            })
+        }),
+        commentsByTopicId: build.query<IComment[], number>({
+            query: (topicId: number) => ({
+                url: 'comments/' + topicId,
+                method: 'GET'
+            })
+        }),
     })
 })
 
 export const {
     useTopicsAllListQuery,
+    useTopicsListByForumIdQuery,
+    useTopicByIdQuery,
+    useCreateTopicMutation,
+    useUpdateTopicMutation,
+    useDeleteTopicMutation,
     useCategoriesAllListQuery,
     useSubcategoriesListByCategoryIdQuery,
     useCreateSubcategoryMutation,
@@ -111,9 +174,13 @@ export const {
     useCreateCategoryMutation,
     useDeleteCategoryMutation,
     useUpdateCategoryMutation,
-    useTopicsListByForumIdQuery,
+    useForumByIdQuery,
     useForumsListBySubcategoryIdQuery,
     useCreateForumMutation,
     useUpdateForumMutation,
     useDeleteForumMutation,
+    useCreateCommentMutation,
+    useDeleteCommentMutation,
+    useUpdateCommentMutation,
+    useCommentsByTopicIdQuery,
 } = bonchanApi

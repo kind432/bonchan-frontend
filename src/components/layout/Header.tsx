@@ -19,7 +19,7 @@ export function Header() {
                         </ul>
                     </div>
                     <div className="flex items-center">
-                        <a href="#" className="text-black bg-white dark:text-gray-300 hover:bg-gray-500 focus:ring-4 focus:ring-gray-400 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Войти</a>
+                        <Link to="/login" className="text-black bg-white dark:text-gray-300 hover:bg-gray-500 focus:ring-4 focus:ring-gray-400 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Войти</Link>
                         <a href="#" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Зарегистироваться</a>
                     </div>
                 </div>

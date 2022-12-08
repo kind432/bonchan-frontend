@@ -16,7 +16,7 @@ export function CreateSubcategory({onCreate, category}: Props) {
 
 
         if(value.trim().length === 0) {
-            setError("Введите правильное имя подкатегории")
+            setError("Введите правильное название подкатегории")
             return
         }
         if(value.trim().length > 19) {
@@ -44,7 +44,7 @@ export function CreateSubcategory({onCreate, category}: Props) {
             <input
                 type="text"
                 className="border py-2 px-4 mb-2 w-full outline-0"
-                placeholder="Введите имя подкатегории..."
+                placeholder="Введите название подкатегории..."
                 value={value}
                 onChange={changeHandler}
             />

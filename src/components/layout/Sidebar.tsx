@@ -12,7 +12,7 @@ export function Sidebar() {
         window.location.reload()
     }
     return (
-        <div className="hidden w-64 lg:flex flex-col my-4 mx-auto top-0 left-0 rounded-lg bg-gray-900 h-full border-r border-gray-500">
+        <div className="hidden w-64 lg:flex flex-col my-4 mx-3 top-0 left-0 rounded-lg bg-gray-900 h-full border-r border-gray-500">
             <div className="flex items-center justify-center h-14 border-b border-gray-500">
                 <div className="text-white">Категории</div>
                 <div className="flex px-2 items-center justify-end">

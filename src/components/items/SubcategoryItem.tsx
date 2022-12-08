@@ -44,7 +44,7 @@ export function SubcategoryItem({subcategory}: Props) {
                     className={"relative flex flex-row items-center h-11 border-transparent"}>
                 <span className="px-4 ml-2 text-1xl hover:text-orange-500 text-white tracking-wide truncate">{subcategory.name}</span>
             </button>
-            <div className="flex px-5 flex-wrap gap-x-1">
+            <div className="flex px-5 pb-2 flex-wrap gap-x-1">
                 <button onClick={() => setShowCreate(true)}><AiOutlinePlusSquare className="bg-orange-500 h-5 w-5 rounded"/></button>
                 <button onClick={() => setShowDelete(true)}><AiOutlineDelete className="bg-orange-500 h-5 w-5 rounded"/></button>
                 <button onClick={() => setShowUpdate(true)}><AiOutlineEdit className="bg-orange-500 h-5 w-5 rounded"/></button>

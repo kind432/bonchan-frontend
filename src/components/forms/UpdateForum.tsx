@@ -16,7 +16,7 @@ export function UpdateForum({onUpdate, forum}: Props) {
     const submitHandler = (event: React.FormEvent) => {
 
         if(value.trim().length === 0) {
-            setError("Введите правильное имя категории")
+            setError("Введите правильное название категории")
             return
         }
 
@@ -50,7 +50,7 @@ export function UpdateForum({onUpdate, forum}: Props) {
             <input
                 type="text"
                 className="border py-2 px-4 mb-2 w-full outline-0"
-                placeholder="Введите имя форума..."
+                placeholder="Введите название форума..."
                 value={value}
                 onChange={changeHandler}
             />
